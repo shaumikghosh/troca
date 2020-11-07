@@ -1,0 +1,156 @@
+body.theme-light{
+	color: #101010;
+}
+.theme-light .card {
+    background: #fff;
+    border: none;
+}
+.theme-light .t-header, .theme-light .t-header-light{
+	background-color: #fbfcfd !important;
+}
+.theme-light .authentication-theme.auth-style_1{
+	background: #fbfcfd;
+}
+.theme-light .form-control, .theme-light .input-group-text{
+	background-color: #f8f9fb;
+	color: rgba(16,16,16,.8);
+	border-color: #f1f4f8;
+}
+.theme-light .grid-header{
+	background-color: #f3f5f6;
+}
+.theme-light input.grid-header{
+	color: #141b2d;
+}
+.theme-light .border-bottom{
+	border-bottom-color: #f7f7f7 !important;
+}
+.theme-light .theme_filter{
+	background: #1f2940;
+	color: #fff;
+}
+.theme-light .dropdown-menu{
+	-webkit-box-shadow: 0 5px 15px 1px rgba(0,0,0,.08);
+	box-shadow: 0 5px 15px 1px rgba(0,0,0,.08);
+	background-color: #fff;
+	border-color: #f2f4f9;
+}
+.theme-light .dropdown-menu:before{
+	border-color: #f2f4f9;
+}
+.theme-light .dropdown-menu .dropdown-item{
+	background: #fff;
+    color: #565656;
+}
+
+.theme_filter{
+	border-radius: 5px 0 0 5px;
+	padding: 10px 8px;
+	background: #fff;
+	position: fixed;
+	font-size: 22px;
+	color: #1f2940;
+	z-index: 99;
+	top: 75px;
+	right: 0;
+}
+.theme_filter svg{
+	display: block;
+}
+.t-header-light{
+	background-color: #f1f1f1;
+}
+.t-logo img{
+	width: 160px;
+}
+.dropdown-user .nav-link img{
+	width: 45px;
+	height: 45px;
+	border-radius: 50px;
+}
+.t-footer{
+	padding: 0 2.5rem;
+	font-weight: 600;
+	font-size: 12px;
+}
+.card-content{
+	padding: 3.2em 3.5em;
+}
+.card-content h3{
+	margin-bottom: 1.2em;
+}
+.card-content p{
+	margin-bottom: 15px;
+}
+.card-sm-para p{
+	max-width: 665px;
+	width: 100%;
+}
+.card-content ol{
+	padding-left: 15px;
+	margin-bottom: 15px;
+}
+.middle-btns .btn{
+	height: 50px;
+	padding-top: 0;
+	font-size: 16px;
+	max-height: 50px;
+	min-width: 260px;
+	padding-bottom: 0;
+	line-height: 50px;
+}
+.input-group-amount .form-control{
+	height: 50px;
+	font-size: 18px;
+	font-weight: 600;
+}
+.input-group-amount .input-group-text{
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.card-job .avtar{
+	width: 60px;
+	height: 60px;
+	border-radius: 60px;
+}
+.card-job h5{
+	margin: 14px 0 12px;
+	font-weight: 300;
+	font-size: 18px;
+}
+.card-job .btn{
+	font-size: 1em;
+}
+input.grid-header{
+	border: 0;
+	color: #fff;
+	font-size: 16px;
+	border-left: 3px solid #696ffb !important;
+}
+
+@media (max-width: 991.98px){
+	.t-footer {
+	    padding: 0 1rem;
+	}
+	.authentication-theme.auth-style_1{
+		padding: 100px 0 40px;
+	}
+}
+@media (max-width: 767px){
+	.t-logo img {
+	    width: 102px;
+	}
+	.dropdown-user .nav-link img{
+		width: 35px;
+		height: 35px;
+	}
+	.card-content {
+	    padding: 2.2em 1.6em;
+	}
+	.card-job h5{
+		font-size: 16px;
+	}
+	.theme_filter{
+		font-size: 16px;
+	}
+}

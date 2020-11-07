@@ -1,0 +1,24 @@
+<svg id="header-shape" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="491.516" viewBox="0 0 1600 491.516">
+  <defs>
+    <linearGradient id="linear-gradient" y1="0.479" x2="1" y2="0.479" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#5355ee"/>
+      <stop offset="1" stop-color="#30b2ea"/>
+    </linearGradient>
+    <clipPath id="clip-path">
+      <path id="Rectangle" d="M0,0H1600V460.063s-186.819,40.9-257.505,29.419c-89.776-14.585-235.906-42.6-286.326-53.306-69.658-14.784-177.876-7.2-256.169,7.279-190.889,35.3-289.5,45.645-373,43.737-97.981-2.239-117.259-2.239-274.474-28.867C83.626,446.656,0,438.02,0,438.02Z" fill="url(#linear-gradient)"/>
+    </clipPath>
+    <linearGradient id="linear-gradient-3" x1="0.023" y1="0.479" x2="1" y2="0.479" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#879bf4"/>
+      <stop offset="1" stop-color="#78c2f1"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="0.038" y1="0.479" x2="1" y2="0.479" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#c0d0f9"/>
+      <stop offset="1" stop-color="#d1ebfa"/>
+    </linearGradient>
+  </defs>
+  <path id="Rectangle-2" data-name="Rectangle" d="M0,0H1600V460.063s-186.819,40.9-257.505,29.419c-89.776-14.585-235.906-42.6-286.326-53.306-69.658-14.784-177.876-7.2-256.169,7.279-190.889,35.3-289.5,45.645-373,43.737-97.981-2.239-117.259-2.239-274.474-28.867C83.626,446.656,0,438.02,0,438.02Z" fill="url(#linear-gradient)"/>
+  <g id="Shape" clip-path="url(#clip-path)">
+    <path id="Rectangle-3" data-name="Rectangle" d="M0,149.862H1600V35.022s-60.589,24.161-121.067,10.263c-40.436-9.292-116.972-28.4-185.095-37.789S1153.8-.346,1122.008,1.053c-38.251,1.682-99.5,7.773-159.64,18.5-66.548,11.872-133.521,30.071-173.28,38.762C598.4,100,510.5,113.762,427,111.854c-97.981-2.239-124.975-3.738-240.993-23.355-20.1-3.4-84.564-28.344-111.9-40.91S0,23.374,0,23.374Z" transform="translate(0 375.339)" fill="url(#linear-gradient-3)"/>
+    <path id="Rectangle-4" data-name="Rectangle" d="M0,130.307H1600V0s-69.6,1.638-146.368,28.034c-21.273,7.314-51.851,9.2-78.595,0s-59.124-21.9-75.575-23.531c-82.119-8.159-142.513,11.31-180.516,22.632S1027.484,44.215,919,68.944C837.023,87.63,648.038,88.227,560.63,72.609c-62.051-11.087-93.946-18.924-138.578-30.58-26.885-7.021-132.186-34.168-219.347-8.751C189.468,37.138,62.783,77.72,35.449,65.153S0,68.944,0,68.944Z" transform="translate(0 394.894)" fill="url(#linear-gradient-4)"/>
+  </g>
+</svg>
