@@ -71,7 +71,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Sign In</a>
+                        <a class="nav-link" href="{{route('user.login')}}">Sign In</a>
                     </li>
                 </ul>
             </div>

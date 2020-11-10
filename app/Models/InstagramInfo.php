@@ -5,12 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class UserStatus extends Model
+class InstagramInfo extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'email_verification_status', 'instagram_verification_status'
+        'user_name', 'followers', 'followings', 'verification_id'
     ];
-    
 }

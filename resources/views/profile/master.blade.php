@@ -5,6 +5,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
 	<title>@yield('title')</title>
+
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
 	<!-- plugins:css -->
     <link rel="stylesheet" href="{{'public/admin'}}/assets/vendors/iconfonts/mdi/css/materialdesignicons.css">
 	<link rel="stylesheet" href="{{'public/admin'}}/assets/vendors/css/vendor.addons.css">
@@ -17,8 +20,7 @@
 	<!-- Layout style -->
 	<link rel="shortcut icon" href="{{'public/admin'}}/assets/images/favicon.ico">
 	<script type="text/javascript" src="{{asset('public/website')}}/js/jquery-3.3.1.min.js"></script>
-
-	    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script>
       const Toast = Swal.mixin({
         toast: true,
@@ -36,6 +38,7 @@
 
 <body class="header-fixed">
 
+	<input type="hidden" value="{{Auth::user()->id}}" id="user_id"/>
 	@include('profile.includes.header')
 	
 	<div class="authentication-theme auth-style_1">
@@ -61,6 +64,37 @@
 			})
 		});
 	</script>
+
+	<script>
+
+        $(document).ready(function(){
+
+            var user_id = $('#user_id').val();
+
+            if( localStorage.getItem('instagram_username') ) {
+                var instagram_username = localStorage.getItem('instagram_username');
+            }
+
+			setInterval(function () {
+
+				$.ajax({
+					type: 'GET',
+					url: `https://instagram.com/${instagram_username}/?__a=1`,
+					dataType: 'JSON',
+					success: function (data) {
+
+						var following = data.graphql.user.edge_follow.count;
+						var followers = data.graphql.user.edge_followed_by.count;
+
+						$('#followings').text(`${following} People`);
+						$('#followers').text(`${followers} People`);
+					}
+            	});
+
+			}, 1000);
+
+        })
+    </script>
 </body>
 
 </html>

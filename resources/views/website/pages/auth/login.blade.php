@@ -50,6 +50,7 @@
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox" class="custom-control-input" id="customCheck1" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }} />
                             <label class="custom-control-label" for="customCheck1" id="remember">Remeber me</label>
+                            <a style="float: right;" href="{{route('user.register')}}">Not registered yet?</a>
                         </div>
                     </div>
                     <!-- /.form-group col-sm-6 -->

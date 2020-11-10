@@ -9,17 +9,17 @@
 
             <div class="mb-md-5 mb-3">
                 <h4>Following</h4>
-                <p class="font-italic border-top pt-1 mt-3">2426 People</p>
+                <p class="font-italic border-top pt-1 mt-3" id="followings"></p>
             </div>
             <!-- /.mb-md-5 mb-3 -->
 
             <div class="mb-md-5 mb-3">
                 <h4>Followers</h4>
-                <p class="font-italic border-top pt-1 mt-3">3502 People</p>
+                <p class="font-italic border-top pt-1 mt-3" id="followers"></p>
             </div>
             <!-- /.mb-md-5 mb-3 -->
 
-            <button class="btn btn-block btn-success">Withdraw</button>
+            <button class="btn btn-block btn-primary">Withdraw</button>
         </div>
         <!-- /.card-body -->
     </div>
@@ -27,7 +27,7 @@
 
     <div class="card shadow text-center">
         <div class="card-body py-5">
-            <button type="button" class="btn btn-block btn-primary">Connected</button>
+            <a type="button" class="btn btn-block btn-success" style="cursor: text">100% Verified!</a>
         </div>
         <!-- /.card-body -->
     </div>

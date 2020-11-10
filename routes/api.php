@@ -20,4 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::get('instagram-verification-sucess', [ProfileController::class, 'verify_instagram_account']);
+Route::post('instagram-verification-sucess/{id}', [ProfileController::class, 'verify_instagram_account']);
+Route::get('get-instagram-username/{id}', [ProfileController::class, 'get_instagram_username']);

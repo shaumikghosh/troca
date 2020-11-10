@@ -19,6 +19,7 @@ class VerificationMiddlware
     {
         $id = $request->user()->id;
         $us = UserStatus::where('user_id', $id)->first();
+
         if (!$us->email_verification_status === true || !$us->instagram_verification_status === true) {
             return Redirect()->route('user.profileVerification');
         }

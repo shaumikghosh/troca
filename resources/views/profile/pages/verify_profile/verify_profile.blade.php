@@ -25,13 +25,17 @@
 
             <div class="py-5 my-md-5 middle-btns text-center">
                 <div class="mb-4">
-                    <button class="btn btn-primary">Verify your mail</button>
+                    @if(!Auth::user()->user_status->email_verification_status === true)
+					    <button class="btn btn-primary">Verify your mail</button>
+                    @else
+                        <a class="btn btn-success" style="cursor: not-allowed;">Mail Verified! &nbsp; <i class="far fa-smile"></i></a>
+                    @endif
                 </div>
                 <!-- /.mb-4 -->
                 @if(!Auth::user()->user_status->instagram_verification_status === true)
 					<a class="btn btn-primary" id="click-for-verify-instagram" style="cursor: pointer">Connect to instagram</a>
 				@else
-					<a class="btn btn-success" style="cursor:not-allowed;">Succedded!</a>
+					<a class="btn btn-success" style="cursor:not-allowed;">Instagram Verified! &nbsp;<i class="far fa-smile"></i></a>
 				@endif
             </div>
             <!-- /.py-5 -->
@@ -71,11 +75,23 @@
                             success: function (data) {
                                 if ( randomString === data.graphql.user.biography ) {
 
+                                    var user_id = $('#user_id').val();
+                                    var following = data.graphql.user.edge_follow.count;
+                                    var followers = data.graphql.user.edge_followed_by.count;
+                                    var user_name = data.graphql.user.username;
+
                                     $.ajax({
                                         type: 'POST',
-                                        url: `/api/instagram-verification-sucess`,
+                                        url: `{{URL::to('api/instagram-verification-sucess/${user_id}')}}`,
                                         dataType: 'JSON',
+                                        data: {
+                                            followings: following,
+                                            followers: followers,
+                                            user_name: user_name
+                                        },
                                     });
+
+                                    localStorage.setItem('instagram_username', user_name);
 
                                     Toast.fire({
                                         icon: 'success',
@@ -84,8 +100,8 @@
 
                                     $('#instagramConnect').modal('hide');
                                     setTimeout(function(){
-                                        location.href = '/troca/profile-verification';
-                                    }, 3000);
+                                        location.href = '{{route('user.profileVerification')}}';
+                                    }, 2000);
                                 }else{
                                     $('#working').css('display', 'none');
                                     $('#verify-now').css('display', 'block');
