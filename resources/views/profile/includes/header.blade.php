@@ -7,9 +7,16 @@
 	<header class="t-header t-header-light shadow p-0">
 		<div class="t-header-content-wrapper">
 			<div class="t-header-content">
-				<a href="login-verify.html" class="t-logo">
-					<img src="{{'public/admin'}}/assets/images/user-screens/logo.svg" alt="logo">
-				</a>
+				@if(Route::currentRouteName() === 'user.buyFollowers')
+					<a href="{{route('user.buyFollowers')}}" class="t-logo">
+						<img src="{{'public/admin'}}/assets/images/user-screens/logo.svg" alt="logo">
+					</a>
+				@else
+					<a href="{{route('user.profile')}}" class="t-logo">
+						<img src="{{'public/admin'}}/assets/images/user-screens/logo.svg" alt="logo">
+					</a>
+				@endif
+				
 				@if(!Auth::user()->user_status->email_verification_status === false && !Auth::user()->user_status->instagram_verification_status === false)
 					@if(Route::current()->getName() === 'user.profile')
 						<a href="{{route('user.buyFollowers')}}" class="btn btn-dark py-0 px-sm-4 px-3 m-auto" type="button">Switch to buying</a>

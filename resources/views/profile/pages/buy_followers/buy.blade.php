@@ -5,7 +5,7 @@
 @section('body')
     <div class="container">
         <div class="row">
-            @include('profile.includes.sidebar2')
+            @include('profile.includes.sidebar')
             <div class="col-sm-8  col-md-9 col-lg-8 mb-3">
                 <div class="card shadow-lg">
                     <div class="card-body text-center card-content card-sm-para">
@@ -13,17 +13,16 @@
                             <h2>BUY YOUR EXPECTED FOLLOWERS</h2>
                         </div>
                         <!-- /.text-center -->
-
                         <div class="row justify-content-center">
                             <div class="col-md-6 col-md-8 col-sm-10 col-10">
                                 <input type="text" class="grid-header mb-4 rounded w-100 text-center"
-                                    placeholder="Followers number" />
+                                    placeholder="Followers number" id="followers-number"/>
                                 <!-- /.grid-header -->
                                 <div class="input-group input-group-amount mb-4">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">$</span>
                                     </div>
-                                    <input type="text" class="form-control" value="100" />
+                                    <input type="text" class="form-control" id="result" value="" disabled/>
                                     <div class="input-group-append">
                                         <span class="input-group-text">USD</span>
                                     </div>
@@ -45,6 +44,16 @@
                 <!-- /.card -->
             </div>
         </div>
-
     </div>
+    <script>
+
+        $(document).ready(function () {
+            
+            $('#followers-number').keyup((e) => {
+                var fixed_value = 0.10; 
+                $('#result').val(e.currentTarget.value*fixed_value);
+            });
+        })
+
+    </script>
 @endsection

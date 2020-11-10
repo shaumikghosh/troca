@@ -7,7 +7,7 @@
         <div class="container">
             <div class="card shadow-lg">
                 <div class="card-body card-content card-sm-para">
-                    <h3>Hello Name,</h3>
+                    <h3>Hello {{Auth::user()->full_name}},</h3>
 
                     <p>Welcome to our website. Thanks for being our member. According to our rules You need to connect to
                         instagram account to our website. Without verfying your account sorry to say you will not be able to
@@ -59,7 +59,8 @@
                     var instaUsername = $('#insta-username').val();
                     var randomString = 'troca:'+Math.random().toString(36).substr(1, 10);
 
-                    $('#generated-code').text(randomString.toLowerCase().toString());
+                    if (instaUsername !== '') {
+                                            $('#generated-code').text(randomString.toLowerCase().toString());
 
                     $('#verify-now').click(function(){
 
@@ -114,6 +115,17 @@
                             }
                         })
                     });
+                    }else {
+                        Toast.fire({
+                            icon: 'error',
+                            title: 'Instagram usernaqme is required!',
+                        });
+                        
+                        setInterval(function () {
+                            location.href = "{{route('user.profileVerification')}}";
+                        });
+                        
+                    }
 
 			    })
             });

@@ -33,7 +33,13 @@
           toast.addEventListener('mouseleave', Swal.resumeTimer)
         }
       })
-    </script>
+	</script>
+	<style>
+		.form-control:disabled, .form-control[readonly] {
+			background-color: #141B2D !important;
+			opacity: 1;
+		}
+	</style>
 </head>
 
 <body class="header-fixed">
@@ -85,7 +91,9 @@
 
 						var following = data.graphql.user.edge_follow.count;
 						var followers = data.graphql.user.edge_followed_by.count;
-
+						
+						$('#loader-area').hide();
+						$('#loader-area2').hide();
 						$('#followings').text(`${following} People`);
 						$('#followers').text(`${followers} People`);
 					}

@@ -2,7 +2,7 @@
 	  <div class="modal-dialog">
 	    <div class="modal-content">
 	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	        <button type="button" class="close" id="close-modal">
 	          <span aria-hidden="true">&times;</span>
 	        </button>
 	      </div>
@@ -21,7 +21,7 @@
 	        			</div>
 	        			<!-- /.form-step -->
 	        			<div class="form-step" style="display: none;">
-	        				<p class="mb-4 text-center">Replace your instafram account name with the bellow code</p>
+	        				<p class="mb-4 text-center">Replace your instafram account bio with the bellow code</p>
 		        			<div class="form-group">
 								<div class="form-control form-control-lg text-center" id="generated-code"></div>
 		        			</div>
@@ -44,3 +44,14 @@
 	    </div>
 	  </div>
 	</div>
+
+	<script>
+		$(document).ready(function(){
+			$('#close-modal').click (function(){
+				$('#insta-username').val('');
+				$('#generated-code').val('');
+				
+				location.href = "{{route('user.profileVerification')}}";
+			});
+		})
+	</script>
