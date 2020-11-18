@@ -19,6 +19,8 @@ class CreateInstagramInfosTable extends Migration
             $table->string('user_name')->unique();
             $table->integer('followers');
             $table->integer('followings');
+            $table->integer('total_posts');
+            $table->integer('user_rating')->nullable();
             $table->bigInteger('user_id')->unsigned();
 
             $table->foreign('user_id')

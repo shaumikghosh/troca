@@ -45,4 +45,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(UserStatus::class, 'user_id');
     }
+
+    public function insta_user_info()
+    {
+        return $this->hasOne(InstagramInfo::class, 'user_id');
+    }
 }

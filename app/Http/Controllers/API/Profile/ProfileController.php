@@ -19,8 +19,27 @@ class ProfileController extends Controller
         $instainfo->user_name = $request->get('user_name');
         $instainfo->followers = $request->get('followers');
         $instainfo->followings = $request->get('followings');
+        $instainfo->total_posts = $request->get('total_posts');
         $instainfo->user_id = $id;
+
+        if ( $request->get('followers') >= 50000 && $request->get('total_posts') >= 50 ) {
+            $instainfo->user_rating = 5;
+        }
+        elseif ( $request->get('followers') >= 10000 && $request->get('total_posts') >= 50 ) {
+            $instainfo->user_rating = 4;
+        }
+        elseif ( $request->get('followers') >= 1000 && $request->get('total_posts') >= 25 ) {
+            $instainfo->user_rating = 3;
+        }
+        elseif ( $request->get('followers') >= 500 && $request->get('total_posts') >= 20 ) {
+            $instainfo->user_rating = 2;
+        }else {
+            $instainfo->user_rating = 1;
+        }
+
         $instainfo->save();
+
+
     }
 
 

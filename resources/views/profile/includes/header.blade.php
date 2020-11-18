@@ -34,8 +34,7 @@
 							<img src="{{'public/admin'}}/assets/images/profile/male/image_1.png" alt="img" />
 						</a>
 						<div class="dropdown-menu dropdown-menu-right" aria-labelledby="appsDropdown">
-							<a class="dropdown-item" href="#">Profile</a>
-							<a class="dropdown-item" href="#">Settings</a>
+							<a class="dropdown-item" href="{{ route('user.setting') }}">Setting</a>
 							<a class="dropdown-item" href="{{route('user.logout')}}">Logout</a>
 						</div>
 					</li>

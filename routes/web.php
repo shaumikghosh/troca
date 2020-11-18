@@ -9,6 +9,9 @@ use App\Http\Controllers\Website\Profile\ProfileController;
 
 Route::group(['middleware' => ['auth']], function () {
 
+    /**
+     * User routes
+     */
     Route::get('/', [HomeController::class, 'index'])->name('home')->withoutMiddleware(['auth']);
     Route::get('/profile', [ProfileController::class, 'profile'])->name('user.profile')->middleware(['profile_verification']);
     Route::get('/profile-verification', [ProfileController::class, 'profileVerfication'])->name('user.profileVerification');
@@ -20,7 +23,13 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/user/registered', [AuthController::class, 'attemptRegister'])->name('user.attemptRegister')->withoutMiddleware(['auth']);;
     Route::post('/user/loggedin', [AuthController::class, 'loginAttempt'])->name('user.loginAttempt')->withoutMiddleware(['auth']);
 
+    
     Route::get('/attempt/logout', [AuthController::class, 'logout'])->name('user.logout');
+    Route::get('/user/setting', [ProfileController::class, 'setting'])->name('user.setting');
 
+
+    /**
+     * Admin routes
+     */
     Route::get('/admin/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
 });

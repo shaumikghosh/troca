@@ -73,33 +73,34 @@
 
 	<script>
 
-        $(document).ready(function(){
+        $(document).ready( function () {
 
             var user_id = $('#user_id').val();
 
-            if( localStorage.getItem('instagram_username') ) {
-                var instagram_username = localStorage.getItem('instagram_username');
-            }
+			$.ajax({
+				type: 'GET',
+				url: `{{URL::to('api/get-instagram-username/${user_id}')}}`,
+				dataType: 'JSON',
+				success: function (data) {
 
-			setInterval(function () {
-
-				$.ajax({
-					type: 'GET',
-					url: `https://instagram.com/${instagram_username}/?__a=1`,
-					dataType: 'JSON',
-					success: function (data) {
-
-						var following = data.graphql.user.edge_follow.count;
-						var followers = data.graphql.user.edge_followed_by.count;
-						
-						$('#loader-area').hide();
-						$('#loader-area2').hide();
-						$('#followings').text(`${following} People`);
-						$('#followers').text(`${followers} People`);
-					}
-            	});
-
-			}, 1000);
+					setInterval( function(){
+						$.ajax({
+							type: 'GET',
+							url: `https://instagram.com/${data.instagram_username}/?__a=1`,
+							dataType: 'JSON',
+							success: function (data) {
+								var following = data.graphql.user.edge_follow.count;
+								var followers = data.graphql.user.edge_followed_by.count;
+								
+								$('#loader-area').hide();
+								$('#loader-area2').hide();
+								$('#followings').text(`${following} People`);
+								$('#followers').text(`${followers} People`);
+							}
+						});
+					}, 1000);
+				}
+			});
 
         })
     </script>

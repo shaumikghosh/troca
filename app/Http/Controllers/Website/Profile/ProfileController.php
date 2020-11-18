@@ -29,4 +29,10 @@ class ProfileController extends Controller
         return view('profile.pages.buy_followers.buy');
     }
 
+
+    public function setting ()
+    {
+        return view('profile.pages.profile.setting');
+    }
+
 }

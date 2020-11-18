@@ -21,7 +21,6 @@
                 </div>
                 <!-- /.card-body -->
             </div>
-            <!-- /.card -->
 
             <div class="py-5 my-md-5 middle-btns text-center">
                 <div class="mb-4">
@@ -60,61 +59,62 @@
                     var randomString = 'troca:'+Math.random().toString(36).substr(1, 10);
 
                     if (instaUsername !== '') {
-                                            $('#generated-code').text(randomString.toLowerCase().toString());
+                        
+                        $('#generated-code').text(randomString.toLowerCase().toString());
 
-                    $('#verify-now').click(function(){
+                        $('#verify-now').click(function(){
 
-                        $('#verify-now').css('display', 'none');
-                        $('#working').css('display', 'block');
+                            $('#verify-now').css('display', 'none');
+                            $('#working').css('display', 'block');
 
-                        $.ajax({
+                            $.ajax({
 
-                            type: 'GET',
-                            url: `https://instagram.com/${instaUsername}/?__a=1`,
-                            dataType: 'JSON',
+                                type: 'GET',
+                                url: `https://instagram.com/${instaUsername}/?__a=1`,
+                                dataType: 'JSON',
 
-                            success: function (data) {
-                                if ( randomString === data.graphql.user.biography ) {
+                                success: function (data) {
+                                    if ( randomString === data.graphql.user.biography ) {
 
-                                    var user_id = $('#user_id').val();
-                                    var following = data.graphql.user.edge_follow.count;
-                                    var followers = data.graphql.user.edge_followed_by.count;
-                                    var user_name = data.graphql.user.username;
+                                        var user_id = $('#user_id').val();
+                                        var following = data.graphql.user.edge_follow.count;
+                                        var followers = data.graphql.user.edge_followed_by.count;
+                                        var user_name = data.graphql.user.username;
+                                        var total_posts = data.graphql.user.edge_owner_to_timeline_media.count;
 
-                                    $.ajax({
-                                        type: 'POST',
-                                        url: `{{URL::to('api/instagram-verification-sucess/${user_id}')}}`,
-                                        dataType: 'JSON',
-                                        data: {
-                                            followings: following,
-                                            followers: followers,
-                                            user_name: user_name
-                                        },
-                                    });
+                                        $.ajax({
+                                            type: 'POST',
+                                            url: `{{URL::to('api/instagram-verification-sucess/${user_id}')}}`,
+                                            dataType: 'JSON',
+                                            data: {
+                                                followings: following,
+                                                followers: followers,
+                                                user_name: user_name,
+                                                total_posts: total_posts
+                                            },
+                                        });
 
-                                    localStorage.setItem('instagram_username', user_name);
+                                        Toast.fire({
+                                            icon: 'success',
+                                            title: 'Instagram account verfication succedded!!',
+                                        });
 
-                                    Toast.fire({
-                                        icon: 'success',
-                                        title: 'Instagram account verfication succedded!!',
-                                    });
+                                        $('#instagramConnect').modal('hide');
+                                        setTimeout(function(){
+                                            location.href = '{{route("user.profileVerification")}}';
+                                        }, 2000);
+                                    }else{
+                                        $('#working').css('display', 'none');
+                                        $('#verify-now').css('display', 'block');
 
-                                    $('#instagramConnect').modal('hide');
-                                    setTimeout(function(){
-                                        location.href = '{{route('user.profileVerification')}}';
-                                    }, 2000);
-                                }else{
-                                    $('#working').css('display', 'none');
-                                    $('#verify-now').css('display', 'block');
-
-                                    Toast.fire({
-                                        icon: 'error',
-                                        title: 'Instagram account verfication failed!!',
-                                    });
+                                        Toast.fire({
+                                            icon: 'error',
+                                            title: 'Instagram account verfication failed!!',
+                                        });
+                                    }
                                 }
-                            }
-                        })
-                    });
+                            })
+                        });
                     }else {
                         Toast.fire({
                             icon: 'error',

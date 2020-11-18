@@ -2,6 +2,17 @@
     <div class="card shadow mb-4 text-center">
         <div class="card-body">
 
+            <div class="mb-md-5 mb-3">
+                <h4>Rating</h4>
+                <p class="font-italic border-top pt-1 mt-3">
+                <div title='@if(Auth::user()->insta_user_info->user_rating===5){{__('5 stars user')}}@elseif(Auth::user()->insta_user_info->user_rating===4){{__('4 stars user')}}@elseif(Auth::user()->insta_user_info->user_rating===3){{__('3 stars user')}}@elseif(Auth::user()->insta_user_info->user_rating===2){{__('2 stars user')}}@else{{__('1 star user')}}@endif'>
+                    @for($i=0; $i<Auth::user()->insta_user_info->user_rating; $i++)
+                        <i style='color:orange' class="fas fa-star"></i>               
+                    @endfor
+                </div>
+                </p>
+            </div>
+
             @if (!Route::currentRouteName() === 'user.profile')
                 <div class="mb-md-5 mb-3">
                     <h4>Availavle</h4>
