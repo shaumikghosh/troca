@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 55 55">
+  <g id="Group_2" data-name="Group 2" transform="translate(0 -9)">
+    <circle id="Oval" cx="27.5" cy="27.5" r="27.5" transform="translate(0 9)" fill="#e8f1fa"/>
+    <g id="support" transform="translate(15 23)">
+      <path id="Path" d="M1.5,0C.673,0,0,.449,0,1H1c0-.184.224-.333.5-.333S2,.816,2,1H3C3,.449,2.327,0,1.5,0Z" transform="translate(9 8)"/>
+      <path id="Path-2" data-name="Path" d="M1.5,0C.673,0,0,.449,0,1H1c0-.184.224-.333.5-.333S2,.816,2,1H3C3,.449,2.327,0,1.5,0Z" transform="translate(14 8)"/>
+      <path id="Shape" d="M0,1.5A1.5,1.5,0,1,1,1.5,3,1.5,1.5,0,0,1,0,1.5Z" transform="translate(11 20)"/>
+      <path id="Shape-2" data-name="Shape" d="M22.967,26H0v-.867H2.6V19.5A6.508,6.508,0,0,1,9.1,13h.472A5.189,5.189,0,0,1,7.879,9.967h-.3A1.949,1.949,0,0,1,6.505,6.394a6.5,6.5,0,0,1,12.99,0A1.947,1.947,0,0,1,19.5,9.636V10.4a2.169,2.169,0,0,1-2.167,2.166h-.468a5.091,5.091,0,0,1-.437.433H16.9a6.508,6.508,0,0,1,6.5,6.5v5.633H26V26Z"/>
+      <rect id="Rectangle" width="1" height="3" transform="translate(19 21)"/>
+      <rect id="Rectangle-2" data-name="Rectangle" width="1" height="1" transform="translate(19 20)"/>
+      <rect id="Rectangle-3" data-name="Rectangle" width="1" height="1" transform="translate(22 4)"/>
+      <rect id="Rectangle-4" data-name="Rectangle" width="1" height="1" transform="translate(22 5)"/>
+      <rect id="Rectangle-5" data-name="Rectangle" width="1" height="1" transform="translate(22 7)"/>
+      <rect id="Rectangle-6" data-name="Rectangle" width="1" height="1" transform="translate(3 9)"/>
+      <rect id="Rectangle-7" data-name="Rectangle" width="1" height="1" transform="translate(3 10)"/>
+      <rect id="Rectangle-8" data-name="Rectangle" width="1" height="1" transform="translate(3 13)"/>
+    </g>
+  </g>
+</svg>

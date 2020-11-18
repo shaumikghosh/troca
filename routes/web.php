@@ -5,6 +5,8 @@ use App\Http\Controllers\Admin\Auth\AuthController;
 use App\Http\Controllers\Admin\Dashboard\DashboardController;
 use App\Http\Controllers\Website\Home\HomeController;
 use App\Http\Controllers\Website\Profile\ProfileController;
+use App\Http\Controllers\Website\About\AboutController;
+use App\Http\Controllers\Website\Earning\EarningController;
 
 
 Route::group(['middleware' => ['auth']], function () {
@@ -13,6 +15,10 @@ Route::group(['middleware' => ['auth']], function () {
      * User routes
      */
     Route::get('/', [HomeController::class, 'index'])->name('home')->withoutMiddleware(['auth']);
+    Route::get('/about-us', [AboutController::class, 'about'])->name('about')->withoutMiddleware(['auth']);
+    Route::get('/about-earning', [EarningController::class, 'earning'])->name('earning')->withoutMiddleware(['auth']);
+
+
     Route::get('/profile', [ProfileController::class, 'profile'])->name('user.profile')->middleware(['profile_verification']);
     Route::get('/profile-verification', [ProfileController::class, 'profileVerfication'])->name('user.profileVerification');
     Route::get('/profile-buy-followers', [ProfileController::class, 'buyFolowers'])->name('user.buyFollowers');

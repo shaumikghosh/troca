@@ -4,6 +4,11 @@
 	}
 }
 
+@media screen and (max-width: 1060px) {
+	.post-card h3{
+		font-size: 22px;
+	}
+}
 @media screen and (max-width: 991px) {
 	.footer h3{
 		font-size: 18px;
@@ -18,10 +23,44 @@
 	    padding-top: 75px;
 	    padding-bottom: 75px;
 	}
+	h1{
+		font-size: 48px;
+	}
+	h2{
+		font-size: 36px;
+	}
+	.py-100 {
+	    padding-top: 40px;
+	    padding-bottom: 40px;
+	}
+	.post-card h3 {
+	    font-size: 16px;
+	    margin-bottom: 10px;
+	}
+	.growth-area{
+		padding: 50px 0 40px;
+		font-size: 14px;
+	}
+	.btn-group-lg>.btn, .btn-lg{
+		font-size: 1rem;
+	}
+	.about-section{
+		padding: 60px 0 120px;
+	}
+	.services_box{
+		padding-bottom: 0;
+	}
+	.testimonial-area{
+		padding: 190px 0 70px;
+	}
+	.py-60 {
+	    padding-top: 20px;
+	    padding-bottom: 20px;
+	}
 }
 
 @media screen and (max-width: 767px) {
-	body{
+	body, .page-banner{
 		font-size: 14px;
 	}
 	.h2, h2 {
@@ -48,5 +87,43 @@
 	.py-100 {
 	    padding-top: 50px;
 	    padding-bottom: 50px;
+	}
+	.why-choose-item h4, .service-item h4{
+		font-size: 16px;
+	}
+	.service-item h4 {
+	    margin-bottom: 11px;
+	}
+	.why-choose-item, .service-item{
+		font-size: 12px;
+	}
+	.about-section{
+		padding-top: 120px;
+	}
+	.testimonial-area{
+		padding-top: 220px;
+	}
+	.testimonial-area, .about-section, .whychoose-us{
+		-webkit-background-size: cover;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	.whychoose-us{
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+	.py-60 {
+	    padding-top: 35px;
+	    padding-bottom: 35px;
+	}
+}
+
+@media screen and (max-width: 575px) {
+	.py-100{
+		padding-top: 35px;
+		padding-bottom: 35px;
+	}
+	h1{
+		font-size: 38px;
 	}
 }

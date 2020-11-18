@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-sm-12 col-md-4">
                     <div class="f-logo mb-4">
-                        <img src="images/logo-header.svg" class="img-fluid" alt="logo" />
+                        <img src="{{ asset('public/website') }}/images/logo-header.svg" class="img-fluid" alt="logo" />
                     </div>
                     <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium
                         totam rem aperiam</p>
