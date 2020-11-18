@@ -22,10 +22,11 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::post('/user/registered', [AuthController::class, 'attemptRegister'])->name('user.attemptRegister')->withoutMiddleware(['auth']);;
     Route::post('/user/loggedin', [AuthController::class, 'loginAttempt'])->name('user.loginAttempt')->withoutMiddleware(['auth']);
+    Route::get('/change-password', [ProfileController::class, 'setting'])->name('user.setting');
+    Route::post('/changed-password', [ProfileController::class, 'change_password'])->name('user.change_password');
 
     
     Route::get('/attempt/logout', [AuthController::class, 'logout'])->name('user.logout');
-    Route::get('/user/setting', [ProfileController::class, 'setting'])->name('user.setting');
 
 
     /**

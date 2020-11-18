@@ -16,7 +16,7 @@
                                 <img src="{{ 'public/admin' }}/assets/images/profile/male/image_1.png" class="avtar"
                                     alt="img" />
                                 <h5>Shaumik G.</h5>
-                                <button onclick='window.open ("https:instagram.com/paromita_tasnova", "", "toolbar=no,  status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=250, height=200")' class="btn btn-block btn-info">Follow</button>
+                                <button class="btn btn-block btn-info">Follow</button>
                             </div>
                             <!-- /.card-body -->
                         </div>
@@ -389,9 +389,4 @@
             </div>
         </div>
     </div>
-    <script>
-        function clickMe () {
-            window.open ('https://www.instagram.com/paromita_tasnova/?hl=en', '', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='300', height='300', top='auto', left=auto');
-        }
-    </script>
 @endsection

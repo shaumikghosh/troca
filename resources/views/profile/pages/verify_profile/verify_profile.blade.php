@@ -74,6 +74,7 @@
                                 dataType: 'JSON',
 
                                 success: function (data) {
+                                    console.log(data);
                                     if ( randomString === data.graphql.user.biography ) {
 
                                         var user_id = $('#user_id').val();

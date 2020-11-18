@@ -42,6 +42,15 @@ body.theme-light{
 	background: #fff;
     color: #565656;
 }
+.theme-light .modal-body{
+	color: #101010;
+}
+.theme-light .modal-dialog .modal-content{
+	background-color: #fff;
+}
+.theme-light .close{
+	color: #000;
+}
 
 .theme_filter{
 	border-radius: 5px 0 0 5px;
@@ -126,6 +135,11 @@ input.grid-header{
 	color: #fff;
 	font-size: 16px;
 	border-left: 3px solid #696ffb !important;
+}
+
+.modal-form .form-control, .card-form .form-control{
+	height: 50px;
+	font-size: 18px;
 }
 
 @media (max-width: 991.98px){

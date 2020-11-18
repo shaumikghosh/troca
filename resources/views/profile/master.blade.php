@@ -82,7 +82,6 @@
 				url: `{{URL::to('api/get-instagram-username/${user_id}')}}`,
 				dataType: 'JSON',
 				success: function (data) {
-
 					setInterval( function(){
 						$.ajax({
 							type: 'GET',
