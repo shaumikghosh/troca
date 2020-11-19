@@ -19,6 +19,18 @@
                                     placeholder="Followers number" id="followers-number"/>
                                 <!-- /.grid-header -->
                                 <div class="input-group input-group-amount mb-4">
+                                    <select class="form-control" id="cat_followers">
+                                        <option value=""> -- Select Followers Category --</option>
+                                        <optgroup label="Select followers category you want">
+                                            <option value="1">1 Star Followers</option>
+                                            <option value="2">2 Stars Followers</option>
+                                            <option value="3">3 Stars Followers</option>
+                                            <option value="4">4 Stars Followers</option>
+                                            <option value="5">5 Stars Followers</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                                <div class="input-group input-group-amount mb-4">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">$</span>
                                     </div>
@@ -28,7 +40,7 @@
                                     </div>
                                 </div>
 
-                                <button type="button" class="btn text-uppercase btn-primary btn-lg">Buy</button>
+                                <button type="button" class="btn text-uppercase btn-primary btn-lg" id="check_out">Check Out</button>
                             </div>
                             <!-- /.col-sm-6 -->
                         </div>
@@ -53,6 +65,10 @@
                 var fixed_value = 0.10; 
                 $('#result').val(e.currentTarget.value*fixed_value);
             });
+
+            $('#check_out').click(function(){
+                console.log($('#cat_followers').val());
+            })
         })
 
     </script>
