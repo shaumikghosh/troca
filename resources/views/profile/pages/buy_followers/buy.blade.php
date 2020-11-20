@@ -34,7 +34,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">$</span>
                                     </div>
-                                    <input type="text" class="form-control" id="result" value="" disabled/>
+                                    <input type="text" class="form-control text-center" id="result" value="" placeholder="Result" disabled/>
                                     <div class="input-group-append">
                                         <span class="input-group-text">USD</span>
                                     </div>

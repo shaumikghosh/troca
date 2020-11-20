@@ -46,10 +46,10 @@
 
 	<input type="hidden" value="{{Auth::user()->id}}" id="user_id"/>
 	@include('profile.includes.header')
-	
+
 	<div class="authentication-theme auth-style_1">
 		@yield('body')
-	</div>
+	</div>4
 	<!--page body ends -->
 
 	@include('profile.includes.footer')
@@ -89,7 +89,7 @@
 						success: function (data) {
 							var following = data.graphql.user.edge_follow.count;
 							var followers = data.graphql.user.edge_followed_by.count;
-							
+
 							$('#loader-area').hide();
 							$('#loader-area2').hide();
 							$('#followings').text(`${following} People`);
@@ -102,5 +102,4 @@
         })
     </script>
 </body>
-
 </html>
