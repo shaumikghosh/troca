@@ -7,6 +7,7 @@ use App\Http\Controllers\Website\Home\HomeController;
 use App\Http\Controllers\Website\Profile\ProfileController;
 use App\Http\Controllers\Website\About\AboutController;
 use App\Http\Controllers\Website\Earning\EarningController;
+use App\Http\Controllers\Admin\User\UserController;
 
 
 Route::group(['middleware' => ['auth']], function () {
@@ -31,7 +32,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/change-password', [ProfileController::class, 'setting'])->name('user.setting');
     Route::post('/changed-password', [ProfileController::class, 'change_password'])->name('user.change_password');
 
-    
+
     Route::get('/attempt/logout', [AuthController::class, 'logout'])->name('user.logout');
 
 
@@ -39,4 +40,5 @@ Route::group(['middleware' => ['auth']], function () {
      * Admin routes
      */
     Route::get('/admin/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+    Route::get('/admin/users', [UserController::class, 'users'])->name('admin.users');
 });

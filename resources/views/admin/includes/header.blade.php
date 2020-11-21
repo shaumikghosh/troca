@@ -1,6 +1,6 @@
 <!-- partial:partials/_header.html -->
 <nav class="t-header">
-    <div class="t-header-brand-wrapper"><a href="index.html"><img class="logo"
+    <div class="t-header-brand-wrapper"><a href="{{ route('dashboard') }}"><img class="logo"
                 src="{{ asset('public/admin') }}/assets/images/logo.svg" alt=""> <img class="logo-mini"
                 src="{{ asset('public/admin') }}/assets/images/logo_mini.svg" alt=""> </a><button
             class="t-header-toggler t-header-desk-toggler d-none d-lg-block"><svg class="logo" viewBox="0 0 200 200">

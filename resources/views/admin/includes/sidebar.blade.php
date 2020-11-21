@@ -1,19 +1,10 @@
 <!-- partial:partials/_sidebar.html -->
 <div class="sidebar">
-    <div class="user-profile">
-        <div class="display-avatar animated-avatar"><img class="profile-img img-lg rounded-circle"
-                src="{{ asset('public/admin') }}/assets/images/profile/male/image_1.png" alt="profile image">
-        </div>
-        <div class="info-wrapper">
-            <p class="user-name">Allen Clerk</p>
-            <h6 class="display-income">$3,400,00</h6>
-        </div>
-    </div>
     <ul class="navigation-menu">
-        <li class="nav-category-divider">MAIN</li>
-        <li><a href="index.html"><span class="link-title">Dashboard</span> <i
-                    class="mdi mdi-gauge link-icon"></i></a></li>
-        <li><a href="#sample-pages" data-toggle="collapse" aria-expanded="false"><span class="link-title">Sample
+        <li class="nav-category-divider">User Management</li>
+        <li><a href="{{ route('admin.users') }}"><span class="link-title">Users</span> <i class="mdi mdi-account-multiple link-icon"></i></a>
+        </li>
+        {{-- <li><a href="#sample-pages" data-toggle="collapse" aria-expanded="false"><span class="link-title">Sample
                     Pages</span> <i class="mdi mdi-flask link-icon"></i></a>
             <ul class="collapse navigation-submenu" id="sample-pages">
                 <li><a href="#authentication-pages" data-toggle="collapse" aria-expanded="false"><span
@@ -24,8 +15,8 @@
                         <li><a href="pages/sample-pages/login_3.html" target="_blank">Login 3</a></li>
                     </ul>
                 </li>
-                <li><a href="#error-pages" data-toggle="collapse" aria-expanded="false"><span
-                            class="link-title">Error Pages</span></a>
+                <li><a href="#error-pages" data-toggle="collapse" aria-expanded="false"><span class="link-title">Error
+                            Pages</span></a>
                     <ul class="collapse navigation-submenu" id="error-pages">
                         <li><a href="pages/sample-pages/error_1.html" target="_blank">Error 1</a></li>
                         <li><a href="pages/sample-pages/error_2.html" target="_blank">Error 2</a></li>
@@ -94,8 +85,7 @@
         <li><a href="pages/apps/kanban-board.html"><span class="link-title">Kanban Board</span> <i
                     class="mdi mdi-folder-multiple-outline link-icon"></i></a></li>
         <li><a href="#calendar-menu" data-toggle="collapse" aria-expanded="false"><span
-                    class="link-title">Calendar</span> <i
-                    class="mdi mdi-calendar-check-outline link-icon"></i></a>
+                    class="link-title">Calendar</span> <i class="mdi mdi-calendar-check-outline link-icon"></i></a>
             <ul class="collapse navigation-submenu" id="calendar-menu">
                 <li><a href="pages/apps/calendar.html">List View</a></li>
                 <li><a href="pages/apps/calendar_2.html">Grid View</a></li>
@@ -103,6 +93,6 @@
         </li>
         <li class="nav-category-divider">DOCS</li>
         <li><a href="../docs/docs.html"><span class="link-title">Documentation</span> <i
-                    class="mdi mdi-asterisk link-icon"></i></a></li>
+                    class="mdi mdi-asterisk link-icon"></i></a></li> --}}
     </ul>
 </div>

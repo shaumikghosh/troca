@@ -53,13 +53,13 @@
                     e.preventDefault();
                     $(this).parents('.form-step').siblings().slideDown('slow');
                     $(this).parents('.form-step').slideUp('slow');
-                    
+
                     // get the user account name
                     var instaUsername = $('#insta-username').val();
                     var randomString = 'troca:'+Math.random().toString(36).substr(1, 10);
 
                     if (instaUsername !== '') {
-                        
+
                         $('#generated-code').text(randomString.toLowerCase().toString());
 
                         $('#verify-now').click(function(){
@@ -74,7 +74,6 @@
                                 dataType: 'JSON',
 
                                 success: function (data) {
-                                    console.log(data);
                                     if ( randomString === data.graphql.user.biography ) {
 
                                         var user_id = $('#user_id').val();
@@ -121,11 +120,11 @@
                             icon: 'error',
                             title: 'Instagram usernaqme is required!',
                         });
-                        
+
                         setInterval(function () {
                             location.href = "{{route('user.profileVerification')}}";
                         });
-                        
+
                     }
 
 			    })
