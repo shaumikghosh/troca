@@ -18,6 +18,9 @@ class CreateBuyFollowersTable extends Migration
             $table->string('insta_username');
             $table->integer('followers_number');
             $table->timestamps();
+            $table->integer('costs');
+            $table->integer('followers_category');
+
             $table->bigInteger('user_id')->unsigned();
 
             $table->foreign('user_id')

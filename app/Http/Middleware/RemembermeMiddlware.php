@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Auth;
 
 class RemembermeMiddlware
 {
@@ -18,7 +19,11 @@ class RemembermeMiddlware
         $remember_me = $request->cookie('remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d')? true:false;
 
         if( $remember_me === true ){
-            return Redirect()->route('user.profile');
+            if (Auth::user()->user_type !== 'admin') {
+                return Redirect()->route('user.profile');
+            }else{
+                return Redirect()->route('dashboard');
+            }
         }
         return $next($request);
     }

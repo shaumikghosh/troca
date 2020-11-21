@@ -121,7 +121,17 @@
                         <div class="dropdown-footer"><a href="#">View All</a></div>
                     </div>
                 </li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('user.logout') }}" onclick="return logout()"><i class="mdi mdi-power mdi-1x" style="color: red;"></i></a>
+                </li>
             </ul>
         </div>
     </div>
+    <script>
+        function logout () {
+            if(confirm("Are you sure to logout ?") === true) {
+                return true;
+            }
+            return false;
+        }
+    </script>
 </nav><!-- partial -->
