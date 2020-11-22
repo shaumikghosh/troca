@@ -53,7 +53,7 @@
                             <td>{{ date('d-M-Y', strtotime($user->created_at)) }}</td>
                             <td>
                                 <a href="" title="Edit user"><i class="mdi mdi-table-edit" style="color: yellow; font-size: 20px"></i></a>
-                                <a href="" title="Delete user"><i class="mdi mdi-delete" style="color: red; font-size: 20px"></i></a>
+                                <a onclick="return delete_user_confirmation()" href="{{ URL::to('/admin/user/delete/'.$user->id) }}" title="Delete user"><i class="mdi mdi-delete" style="color: red; font-size: 20px"></i></a>
                             </td>
                         </tr>
                     @endif
@@ -65,6 +65,14 @@
     </div>
   </div>
   <script>
+
+      function delete_user_confirmation () {
+          if (confirm("Are you sure to delete it?") === true) {
+              return true;
+          }
+          return false;
+      }
+
       $(document).ready(function(){
           $('#changeUserStatus').click(function(){
 
@@ -95,4 +103,12 @@
           })
       })
   </script>
+  @if(Session::has('message'))
+    <script>
+        Toast.fire({
+            icon: 'success',
+            title: '{{ Session::get("message") }}'
+        });
+    </script>
+  @endif
 @endsection

@@ -50,7 +50,7 @@
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox" class="custom-control-input" id="customCheck1" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }} />
                             <label class="custom-control-label" for="customCheck1" id="remember">Remeber me</label>
-                            <a style="float: right;" href="{{route('user.register')}}">Not registered yet?</a>
+                            <a style="float: right;" href="{{route('user.forgot_password')}}">forgot password?</a>
                         </div>
                     </div>
                     <!-- /.form-group col-sm-6 -->
@@ -73,7 +73,7 @@
             var password = $('#passowrd').val();
 
             if ( email === "" || password === "" ) {
-                
+
                 Toast.fire({
                     icon: 'error',
                     title: 'Email & Password required!',
@@ -87,4 +87,14 @@
         })
     })
 </script>
+
+@if (Session::has('message'))
+    <script>
+        Toast.fire({
+            icon: 'success',
+            title: '{{ Session::get('password_reset_success') }}',
+        });
+
+    </script>
+@endif
 @endsection

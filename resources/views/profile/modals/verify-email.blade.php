@@ -1,5 +1,5 @@
 <!-- Modal Verify your mail -->
-<div class="modal fade" id="VerifyEmail" tabindex="-1" aria-labelledby="VerifyEmailLabel" aria-hidden="true">
+<div class="modal fade" id="VerifyEmailAdd" tabindex="-1" aria-labelledby="VerifyEmailLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -15,11 +15,11 @@
 
                         <form action="/">
                             <div class="form-group">
-                                <input type="email" class="form-control form-control-lg text-center"
-                                    placeholder="Email Address" />
+                                <input id="otp_code" type="text" class="form-control form-control-lg text-center"
+                                    placeholder="Enter OTP code" />
                             </div>
                             <!-- /.form-group -->
-                            <button class="btn btn-block btn-lg btn-primary">Verify Email</button>
+                            <button class="btn btn-block btn-lg btn-primary" id="send_verification_code">Verify Email</button>
                         </form>
                     </div>
                     <!-- /.col-md-7 col-sm-8 -->

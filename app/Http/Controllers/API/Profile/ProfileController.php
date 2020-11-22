@@ -6,6 +6,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\UserStatus;
 use App\Models\InstagramInfo;
+use App\Models\EmailVerifyOTP;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendEmail;
 
 class ProfileController extends Controller
 {
@@ -50,6 +54,31 @@ class ProfileController extends Controller
         $instainfo = InstagramInfo::where('user_id', $id)->first();
 
         return response(["instagram_username" => $instainfo->user_name], 200);
+    }
+
+
+
+
+    public function generate_email_verification_code (Request $request)
+    {
+        return Auth::user();
+        // $otp_code = $request->get('otp_code');
+        // $user_id = $request->get('user_id');
+
+        // $otp = new EmailVerifyOTP();
+        // $otp->email_verify_otp = $otp_code;
+        // $otp->user_id = $user_id;
+        // $otp_saved = $otp->save();
+
+        // if ($otp_saved) {
+        //     $data = [
+        //         'body' => "Your email verification otp OPT code is: $otp_code",
+        //         'name' => "{{Auth::user()->full_name}}"
+        //     ];
+
+        //     Mail::to('shaumik.gh@gmail.com')->send(new SendEmail($data));
+        // }
+        // return response(["message"=> "success"], 200);
     }
 
 

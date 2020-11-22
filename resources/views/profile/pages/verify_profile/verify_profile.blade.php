@@ -25,7 +25,7 @@
             <div class="py-5 my-md-5 middle-btns text-center">
                 <div class="mb-4">
                     @if(!Auth::user()->user_status->email_verification_status === true)
-					    <button class="btn btn-primary">Verify your mail</button>
+					    <button class="btn btn-primary" id="verfyemail">Verify your mail</button>
                     @else
                         <a class="btn btn-success" style="cursor: not-allowed;">Mail Verified! &nbsp; <i class="far fa-smile"></i></a>
                     @endif
@@ -41,6 +41,7 @@
         </div>
 
         @include('profile.modals.connect-instagram')
+        @include('profile.modals.verify-email')
 
         <script type="text/javascript">
             $(document).ready(function(){
@@ -127,7 +128,51 @@
 
                     }
 
-			    })
+			    });
+
+
+
+
+                // $('#send_verification_code').click(function(e){
+                //     e.preventDefault();
+                //     $(this).parents('.form-step').siblings().slideDown('slow');
+                //     $(this).parents('.form-step').slideUp('slow');
+
+                //     var otp_code = $('#otp_code').val();
+                //     var randomString = 'troca:'+Math.random().toString(36).substr(1, 10);
+
+                //     if (otp_code !== '') {
+
+                //     }else {
+                //         Toast.fire({
+                //             icon: 'error',
+                //             title: 'OTP code is required!',
+                //         });
+                //     }
+
+			    // });
+            });
+        </script>
+        <script>
+            $(document).ready(function(){
+                $('#verfyemail').click(function(){
+
+                    $('#VerifyEmailAdd').modal('show');
+                    var user_id = $('#user_id').val();
+                    var otp_code = Math.floor(Math.random() * 1000000)
+                    $.ajax({
+                        type: 'POST',
+                        url: "{{URL::to('api/generate-email-verification-otp')}}",
+                        dataType: 'JSON',
+                        data: {
+                            otp_code: otp_code,
+                            user_id: user_id,
+                        },
+                        success:function(data) {
+                            console.log(data);
+                        }
+                    });
+                });
             });
         </script>
     @endsection

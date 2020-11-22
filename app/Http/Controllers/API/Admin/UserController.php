@@ -14,12 +14,18 @@ class UserController extends Controller
         $id = $request->get('user_id');
         $status = $request->get('user_status');
 
-        // return response(["user_id"=>$id, "user_status"=>$status]);
-
         $user = User::find($id);
         $user->status = $status;
         $user->save();
 
-        return response(['success_message' => 'Action successfully performed!'], 200);
+        $message = null;
+
+        if ($status === 'active' ) {
+            $message = "User successfully reactivated!";
+        }else {
+            $message = "User successfully deactivated!";
+        }
+
+        return response(['success_message' => $message], 200);
     }
 }
