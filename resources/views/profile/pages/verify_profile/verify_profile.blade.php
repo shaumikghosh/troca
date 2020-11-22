@@ -129,28 +129,6 @@
                     }
 
 			    });
-
-
-
-
-                // $('#send_verification_code').click(function(e){
-                //     e.preventDefault();
-                //     $(this).parents('.form-step').siblings().slideDown('slow');
-                //     $(this).parents('.form-step').slideUp('slow');
-
-                //     var otp_code = $('#otp_code').val();
-                //     var randomString = 'troca:'+Math.random().toString(36).substr(1, 10);
-
-                //     if (otp_code !== '') {
-
-                //     }else {
-                //         Toast.fire({
-                //             icon: 'error',
-                //             title: 'OTP code is required!',
-                //         });
-                //     }
-
-			    // });
             });
         </script>
         <script>
@@ -168,11 +146,33 @@
                             otp_code: otp_code,
                             user_id: user_id,
                         },
-                        success:function(data) {
-                            console.log(data);
-                        }
                     });
                 });
+
+                $('#verify_now').click(function(){
+                    var rcv_otp = $('#otp_code').val();
+                    var user_id = $('#user_id').val();
+
+                    $.ajax({
+                        type: 'POST',
+                        url: "{{URL::to('api/verify-email-address')}}",
+                        dataType: 'JSON',
+                        data: {
+                            otp_code: rcv_otp,
+                            user_id: user_id,
+                        },
+                        success: function(data) {
+                            Toast.fire({
+                            icon: 'success',
+                            title: `${data.success}`,
+                        });
+
+                        setTimeout(function () {
+                            location.href = "{{route('user.profileVerification')}}";
+                        }, 2000);
+                        }
+                    });
+                })
             });
         </script>
     @endsection

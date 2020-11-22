@@ -19,7 +19,7 @@
                                     placeholder="Enter OTP code" />
                             </div>
                             <!-- /.form-group -->
-                            <button class="btn btn-block btn-lg btn-primary" id="send_verification_code">Verify Email</button>
+                            <button type="button" class="btn btn-block btn-lg btn-primary" id="verify_now">Verify Email</button>
                         </form>
                     </div>
                     <!-- /.col-md-7 col-sm-8 -->

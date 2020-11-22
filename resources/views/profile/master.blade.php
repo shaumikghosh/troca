@@ -49,7 +49,7 @@
 
 	<div class="authentication-theme auth-style_1">
 		@yield('body')
-	</div>4
+	</div>
 	<!--page body ends -->
 
 	@include('profile.includes.footer')

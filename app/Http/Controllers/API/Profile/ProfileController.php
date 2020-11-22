@@ -10,6 +10,7 @@ use App\Models\EmailVerifyOTP;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendEmail;
+use App\Models\User;
 
 class ProfileController extends Controller
 {
@@ -61,24 +62,42 @@ class ProfileController extends Controller
 
     public function generate_email_verification_code (Request $request)
     {
-        return Auth::user();
-        // $otp_code = $request->get('otp_code');
-        // $user_id = $request->get('user_id');
+        $otp_code = $request->get('otp_code');
+        $user_id = $request->get('user_id');
 
-        // $otp = new EmailVerifyOTP();
-        // $otp->email_verify_otp = $otp_code;
-        // $otp->user_id = $user_id;
-        // $otp_saved = $otp->save();
+        $otp = new EmailVerifyOTP();
+        $otp->email_verify_otp = $otp_code;
+        $otp->user_id = $user_id;
+        $otp_saved = $otp->save();
 
-        // if ($otp_saved) {
-        //     $data = [
-        //         'body' => "Your email verification otp OPT code is: $otp_code",
-        //         'name' => "{{Auth::user()->full_name}}"
-        //     ];
+        if ($otp_saved) {
+            $data = [
+                'body' => "Your email verification otp OPT code is: $otp_code",
+                'name' => "{{Auth::user()->full_name}}"
+            ];
 
-        //     Mail::to('shaumik.gh@gmail.com')->send(new SendEmail($data));
-        // }
-        // return response(["message"=> "success"], 200);
+            Mail::to('shaumik.gh@gmail.com')->send(new SendEmail($data));
+        }
+        return response(["message"=> "success"], 200);
+    }
+
+
+
+    public function verify_email_now (Request $request)
+    {
+        $otp_code = $request->get('otp_code');
+        $user_id = $request->get('user_id');
+
+        $email_otp = EmailVerifyOTP::orderBy('created_at', 'DESC')->where('user_id', $user_id)->first();
+        if ((int)$otp_code === (int)$email_otp->email_verify_otp) {
+            UserStatus::where('user_id', $email_otp->user_id)->update([
+                'email_verification_status' => true
+            ]);
+
+            return response(["success" => "Thanks for verifying your email!"]);
+        }else{
+            return response(["OTP_404"=>"otp not found"], 400);
+        }
     }
 
 

@@ -15,3 +15,4 @@ Route::post('instagram-verification-sucess/{id}', [ProfileController::class, 've
 Route::get('get-instagram-username/{id}', [ProfileController::class, 'get_instagram_username']);
 Route::post('change-user-status', [UserController::class, 'change_user_sttaus']);
 Route::post('generate-email-verification-otp', [ProfileController::class, 'generate_email_verification_code']);
+Route::post('verify-email-address', [ProfileController::class, 'verify_email_now']);
